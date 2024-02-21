@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ include "common.ingressname.appmgr" . }}
+spec:
+  rules:
+  - http:
+      paths:
+      - path: {{ include "common.kongpath.ric.appmgr" . }}
+        pathType: ImplementationSpecific  # Specify the pathType here
+        backend:
+          service:
+            name: {{ include "common.servicename.appmgr.http" . }}  # Update to reflect the correct structure
+            port:
+              number: {{ include "common.serviceport.appmgr.http" . }}  # Update to reflect the correct structure
+
