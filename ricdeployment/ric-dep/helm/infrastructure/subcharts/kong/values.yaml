@@ -279,8 +279,8 @@ proxy:
   # Enable creating a Kubernetes service for the proxy
   enabled: true
   type: LoadBalancer
-  #externalIPs:
-  #- 35.238.59.45
+  externalIPs:
+  - 35.188.32.67
   #status:
   #loadBalancer:
   #  ingress:
@@ -393,7 +393,7 @@ proxy:
     #   - kong-proxy-other.example.com
 
   # Optionally specify a static load balancer IP.
-  loadBalancerIP: 34.100.242.204
+  #loadBalancerIP: 34.100.242.204
 
 # Specify Kong UDP proxy service configuration
 # Currently, LoadBalancer type Services are generally limited to a single transport protocol
