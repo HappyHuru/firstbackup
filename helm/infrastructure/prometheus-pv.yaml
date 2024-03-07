@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  annotations:
+    meta.helm.sh/release-namespace: ricplt
+  labels:
+    app: prometheus
+    release: r4-infrastructure
+  name: pv-prometheus
+spec:
+  accessModes:
+  - ReadWriteOnce
+  capacity:
+    storage: 10Gi
+  claimRef:
+    apiVersion: v1
+    kind: PersistentVolumeClaim
+    name: pvc-prometheus
+    namespace: ricplt
+  hostPath:
+    path: /var/lib/prometheus
+    type: ""
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: local-storage
+  volumeMode: Filesystem

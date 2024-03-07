@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  annotations:
+    meta.helm.sh/release-name: {{ .Release.Name }}
+    meta.helm.sh/release-namespace: ricplt 
+    pv.kubernetes.io/bound-by-controller: "yes"
+  finalizers:
+  - kubernetes.io/pv-protection
+  labels:
+    app.kubernetes.io/managed-by: Helm
+  name: {{ .Release.Name }}-pv
+spec:
+  accessModes:
+  - ReadWriteOnce
+  capacity:
+    storage: 100Mi
+  claimRef:
+    apiVersion: v1
+    kind: PersistentVolumeClaim
+    name: r4-influxdb-data-r4-influxdb-influxdb2-0
+    namespace: ricplt
+  hostPath:
+    path: /var/lib/influxdb
+    type: ""
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: local-storage
+  volumeMode: Filesystem
+

@@ -1,0 +1,18 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  labels:
+    app.kubernetes.io/instance: r4
+    app.kubernetes.io/name: influxdb
+  name: r4-influxdb-data-r4-influxdb-influxdb2-0
+  namespace: ricplt
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 50Gi
+  volumeMode: Filesystem
+  storageClassName: local-storage
+  volumeName: {{ .Release.Name }}-pv
+

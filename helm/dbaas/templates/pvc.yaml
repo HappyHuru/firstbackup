@@ -1,0 +1,42 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  namespace: {{ include "common.namespace.platform" . }}
+  labels:
+    app: {{ include "common.namespace.platform" . }}-{{ include "common.name.dbaas" . }}
+    release: {{ .Release.Name }}
+  name: redis-data
+spec:
+  accessModes:
+  - ReadWriteOnce
+  capacity:
+    storage: 10Gi
+  claimRef:
+    apiVersion: v1
+    kind: PersistentVolumeClaim
+    name: redis-data
+    namespace: {{ include "common.namespace.platform" . }}
+  hostPath:
+    path: /mnt/redis-data
+    type: ""
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: local-storage
+  volumeMode: Filesystem
+--- 
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  labels:
+    app: {{ include "common.namespace.platform" . }}-{{ include "common.name.dbaas" . }}
+    release: {{ .Release.Name }}
+  name: redis-data
+  namespace: {{ include "common.namespace.platform" . }}
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi
+  volumeMode: Filesystem
+  storageClassName: local-storage
+  volumeName: redis-data
