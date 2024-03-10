@@ -1,0 +1,54 @@
+apiVersion: v1
+entries:
+  ad:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2024-03-10T17:19:26.958056426Z"
+    description: Standard xApp Helm Chart
+    digest: 686a0e2f50106d3b1a8cc4b7e1f0377b703944e465c9d15679ac2896472699a4
+    name: ad
+    urls:
+    - charts/ad-1.0.0.tgz
+    version: 1.0.0
+  kpimon-go:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2024-03-10T17:20:58.609660648Z"
+    description: Standard xApp Helm Chart
+    digest: 824bcd2d6eb482caac22f8ece5f119b84c7a7d230f2b191546efbcefb440dec0
+    name: kpimon-go
+    urls:
+    - charts/kpimon-go-2.0.1.tgz
+    version: 2.0.1
+  qp:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2024-03-10T17:21:17.755838957Z"
+    description: Standard xApp Helm Chart
+    digest: ee930c1251bc278553d8ce83efaa2d15f250501333e2c9eafa9678093d808cdd
+    name: qp
+    urls:
+    - charts/qp-0.0.5.tgz
+    version: 0.0.5
+  rc:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2024-03-10T17:21:47.812527238Z"
+    description: Standard xApp Helm Chart
+    digest: ed7725693ee0b9f0a131c0feebdf858fa4247a2d316739362b5d731b00992b2f
+    name: rc
+    urls:
+    - charts/rc-1.0.0.tgz
+    version: 1.0.0
+  trafficxapp:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2024-03-10T17:21:30.747625725Z"
+    description: Standard xApp Helm Chart
+    digest: 1652c2363b9a08547bd00b31673b57e4e6a0d6eaf2814ee051d7b3219ab1774b
+    name: trafficxapp
+    urls:
+    - charts/trafficxapp-1.2.5.tgz
+    version: 1.2.5
+generated: "2024-03-10T17:21:48Z"
+serverInfo: {}
